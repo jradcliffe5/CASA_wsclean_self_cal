@@ -47,7 +47,7 @@ inputs = headless('inputs.txt')
 self_cal_solints = test_list(inputs['self_cal_solint'],float=False)
 path_to_casa = inputs['path_to_casa']
 
-os.system('python run_wsclean.py %s' % 'init')
+os.system('python run_wsclean.py %d' % -1)
 for i in range(len(self_cal_solints)):
     os.system('%s --nologger --log2term -c run_casa.py %d' % (path_to_casa,i))
     os.system('python run_wsclean.py %d' % i)
