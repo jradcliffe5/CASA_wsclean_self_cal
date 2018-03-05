@@ -65,8 +65,6 @@ size_scale = int(imsize*60.*(1./cell))
 
 ms1 = str(inputs['ms'])
 
-if bpa < 0:
-    bpa = 360+bpa ## command line entry does not accept negatives
 
 if do_MFS == 'True':
     if do_multiscale == 'True':
