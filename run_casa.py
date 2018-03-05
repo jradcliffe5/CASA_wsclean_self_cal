@@ -88,7 +88,7 @@ else:
 
 applycal(vis=measurement_set,gaintable=gaintable,parang=True,spwmap=spwmap)
 
-plotcal(caltable='%s.%s%d' % (measurement_set.split('.ms')[0],self_cal_type[i],i), xaxis='time', yaxis='phase', subplot=321, iteration='antenna', showgui=False, figfile='%s_%s%d.pdf' % (measurement_set.split('.ms')[0],self_cal_type[i],i))
+plotcal(caltable='%s.%s%d' % (measurement_set.split('.ms')[0],self_cal_type[i],i), xaxis='time', yaxis='phase', subplot=321, iteration='antenna', showgui=False, plotrange=[0,0,-180,180], figfile='%s_%s%d.pdf' % (measurement_set.split('.ms')[0],self_cal_type[i],i))
 
 if (self_cal_type[i] == 'ap') or (self_cal_type[i] =='a'):
     plotcal(caltable='%s.%s%d' % (measurement_set.split('.ms')[0],self_cal_type[i],i), xaxis='time', yaxis='amp', subplot=321, iteration='antenna', showgui=False, figfile='%s_%s%d_amp.pdf' % (measurement_set.split('.ms')[0],self_cal_type[i],i))
