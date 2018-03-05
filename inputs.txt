@@ -1,0 +1,28 @@
+### Input file to CASA_wsclean_self_cal
+## Generic
+ms = 'JVLA1_small_data.ms'
+
+## For self_cal
+path_to_casa = casa
+self_cal_solint = 120s,120s,120s
+self_cal_type = p,p,p
+sc_combine = spw,spw,spw
+minsnr = 1
+
+## For wsclean
+wsclean_loc = wsclean
+ncore = 30
+mem = 90
+cell = 0.045 ## in arcsec
+imsize = 15 ## in arcmins
+niter = 150000
+gain = 0.1
+mgain = 0.85
+do_MFS = True
+auto_threshold = 2
+channels_out = 32
+deconvolution_channels = 8
+nterms = 2
+weight = 'natural'
+do_multiscale = True
+multi_scale_scales = 
