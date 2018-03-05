@@ -71,11 +71,8 @@ if do_MFS == 'True':
         os.system('%s -mem %d -j %d -name %s -size %d %d -scale %sasec -weight %s -gain %.2f -mgain %.2f -auto-threshold %.1f -niter %s -join-channels -stopnegative -channels-out %s -deconvolution-channels %s -fit-spectral-pol %s -multiscale %s %s' % (wsclean_loc,mem, ncore, '%s_%s.wsclean' % (ms1.split('.ms')[0],index), size_scale,size_scale,cell, weight, gain, mgain, auto_threshold, niter, channels_out, deconvolution_channels, nterms, multi_scale_scales, ms1))
     else:
         os.system('%s -mem %d -j %d -name %s -size %d %d -scale %sasec -weight %s -gain %.2f -mgain %.2f -auto-threshold %.1f -niter %s -join-channels -stopnegative -channels-out %s -deconvolution-channels %s -fit-spectral-pol %s %s' % (wsclean_loc,mem, ncore, '%s_%s.wsclean' % (ms1.split('.ms')[0],index), size_scale,size_scale,cell, weight, gain, mgain, auto_threshold, niter, channels_out, deconvolution_channels, nterms, ms1))
-    logging.info('COMPLETE... a shiny image is made')
 else:
     if do_multiscale == 'True':
         os.system('%s -mem %d -j %d -name %s -size %d %d -scale %sasec -weight %s -gain %.2f -mgain %.2f -auto-threshold %.1f -niter %s -stopnegative -multiscale %s %s' % (wsclean_loc,mem, ncore, '%s_%s.wsclean' % (ms1.split('.ms')[0],index), size_scale,size_scale,cell, weight, gain, mgain, auto_threshold, niter,multi_scale_scales, ms1))
-        logging.info('COMPLETE... a shiny image is made')
     else:
         os.system('%s -mem %d -j %d -name %s -size %d %d -scale %sasec -weight %s -gain %.2f -mgain %.2f -auto-threshold %.1f -stopnegative -niter %s %s' % (wsclean_loc,mem, ncore, '%s_%s.wsclean' % (ms1.split('.ms')[0],index), size_scale,size_scale,cell, weight, gain, mgain, auto_threshold, niter, ms1))
-        logging.info('COMPLETE... a shiny image is made')
