@@ -2,7 +2,7 @@ import os,re,sys
 import numpy as np
 
 try:
-    index = int(sys.argv[sys.argv.index('run_casa.py')+1])
+    index = int(sys.argv[sys.argv.index('run_wsclean.py')+1])
 except IndexError:
     print 'Failed...run_wsclean.py'
 
