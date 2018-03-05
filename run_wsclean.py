@@ -68,9 +68,9 @@ ms1 = str(inputs['ms'])
 
 if do_MFS == 'True':
     if do_multiscale == 'True':
-        os.system('%s -mem %d -j %d -name %s -size %d %d -scale %sasec -weight %s -gain %.2f -mgain %.2f -auto-threshold %.1f -niter %s -joinchannels -stopnegative -channels-out %s -deconvolution-channels %s -fit-spectral-pol %s -multiscale %s %s' % (wsclean_loc,mem, ncore, '%s_%s.wsclean' % (ms1.split('.ms')[0],index), size_scale,size_scale,cell, weight, gain, mgain, auto_threshold, niter, channels_out, deconvolution_channels, nterms, multi_scale_scales, ms1))
+        os.system('%s -mem %d -j %d -name %s -size %d %d -scale %sasec -weight %s -gain %.2f -mgain %.2f -auto-threshold %.1f -niter %s -joinchannels -stopnegative -channelsout %s -deconvolution-channels %s -fit-spectral-pol %s -multiscale %s %s' % (wsclean_loc,mem, ncore, '%s_%s.wsclean' % (ms1.split('.ms')[0],index), size_scale,size_scale,cell, weight, gain, mgain, auto_threshold, niter, channels_out, deconvolution_channels, nterms, multi_scale_scales, ms1))
     else:
-        os.system('%s -mem %d -j %d -name %s -size %d %d -scale %sasec -weight %s -gain %.2f -mgain %.2f -auto-threshold %.1f -niter %s -joinchannels -stopnegative -channels-out %s -deconvolution-channels %s -fit-spectral-pol %s %s' % (wsclean_loc,mem, ncore, '%s_%s.wsclean' % (ms1.split('.ms')[0],index), size_scale,size_scale,cell, weight, gain, mgain, auto_threshold, niter, channels_out, deconvolution_channels, nterms, ms1))
+        os.system('%s -mem %d -j %d -name %s -size %d %d -scale %sasec -weight %s -gain %.2f -mgain %.2f -auto-threshold %.1f -niter %s -joinchannels -stopnegative -channelsout %s -deconvolution-channels %s -fit-spectral-pol %s %s' % (wsclean_loc,mem, ncore, '%s_%s.wsclean' % (ms1.split('.ms')[0],index), size_scale,size_scale,cell, weight, gain, mgain, auto_threshold, niter, channels_out, deconvolution_channels, nterms, ms1))
 else:
     if do_multiscale == 'True':
         os.system('%s -mem %d -j %d -name %s -size %d %d -scale %sasec -weight %s -gain %.2f -mgain %.2f -auto-threshold %.1f -niter %s -stopnegative -multiscale %s %s' % (wsclean_loc,mem, ncore, '%s_%s.wsclean' % (ms1.split('.ms')[0],index), size_scale,size_scale,cell, weight, gain, mgain, auto_threshold, niter,multi_scale_scales, ms1))
