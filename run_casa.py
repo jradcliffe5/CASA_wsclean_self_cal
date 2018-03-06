@@ -77,7 +77,7 @@ if self_cal_type[i] == 'p':
     minblperant = 3
 else:
     minblperant = 4
-gaincal(vis=measurement_set, caltable='%s.%s%d' % (measurement_set.split('.ms')[0],self_cal_type[i],i), solint=self_cal_solints[i], combine=combine[i], calmode=self_cal_type[i],gaintable=gaintable,parang=True,minsnr=minsnr,minblperant=minblperant,spwmap=spwmap)
+gaincal(vis=measurement_set, caltable='%s.%s%d' % (measurement_set.split('.ms')[0],self_cal_type[i],i), solint=self_cal_solints[i], combine=combine[i], calmode=self_cal_type[i],gaintable=gaintable,parang=True,minsnr=minsnr,minblperant=minblperant,interp=interp,spwmap=spwmap)
 
 gaintable = gaintable + ['%s.%s%d' % (measurement_set.split('.ms')[0],self_cal_type[i],i)]
 interp = interp + ['linear']
@@ -86,7 +86,7 @@ if combine[i] == 'spw':
 else:
     spwmap = spwmap + [np.array([])]
 
-applycal(vis=measurement_set,gaintable=gaintable,parang=True,spwmap=spwmap)
+applycal(vis=measurement_set,gaintable=gaintable,interp=interp,parang=True,spwmap=spwmap)
 
 plotcal(caltable='%s.%s%d' % (measurement_set.split('.ms')[0],self_cal_type[i],i), xaxis='time', yaxis='phase', subplot=321, iteration='antenna', showgui=False, plotrange=[0,0,-180,180], figfile='%s_%s%d.pdf' % (measurement_set.split('.ms')[0],self_cal_type[i],i))
 
