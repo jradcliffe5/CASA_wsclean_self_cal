@@ -51,4 +51,4 @@ os.system('python run_wsclean.py %d' % -1)
 for i in range(len(self_cal_solints)):
     os.system('%s --nologger --log2term -c run_casa.py %d' % (path_to_casa,i))
     os.system('python run_wsclean.py %d' % i)
-os.system('python run_wsclean.py %d' % i+1)
+os.system('python run_wsclean.py %d' % int(i)+1)
